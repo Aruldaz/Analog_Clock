@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Poppins:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #e1828a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.analog-clock{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 50%;
+    border: 15px inset #393838;
+    position: relative;
+
+
+
+}
+
+.analog-clock::before{
+    content: 'DelectA';
+    position: absolute;
+    color: #050505;
+    font-size: 20px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50px);   
+
+}
+
+.analog-clock::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #d10808;
+    border-radius: 50%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50px);
+    z-index: 10;
+}
+
+.number{
+    --rotate:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #d10808;
+    text-align: center;
+    font-size: 25px;
+    transform: rotate(var(--rotate));
+}
+
+.number-1{--rotate:30deg;}
+.number-2{--rotate:60deg;}
+.number-3{--rotate:90deg;}
+.number-4{--rotate:120deg;}
+.number-5{--rotate:150deg;}
+.number-6{--rotate:180deg;}
+.number-7{--rotate:210deg;}
+.number-8{--rotate:240deg;}
+.number-9{--rotate:270deg;}
+.number-10{--rotate:300deg;}
+.number-11{--rotate:330deg;}
+
+.needle{
+    --rotation:0;
+    position: absolute;
+    width: 10px;
+    height: 42%;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    z-index: 8;
+
+}
+
+.sec{
+    background-color: red;
+    width: 3px;
+    height: 45%;
+}
+
+.min{
+    background-color: #050505;
+    width: 7px;
+    height: 40%;
+}
+
+.hrs{
+    background-color: #050505;
+    width: 10px;
+    height: 30%;
+}
